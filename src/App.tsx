@@ -1,9 +1,10 @@
 import React from "react";
-import Autenticacao from "./components/Autenticacao";
+import Autenticacao from "./components/BackGround";
+import Index from "./routes/Index";
 
 
 export default (props:any)=>{
 	return(
-		<Autenticacao/>
+		<Index/>
 	)
 }

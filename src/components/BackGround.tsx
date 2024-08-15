@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-import { ImageBackground, Text, View, StyleSheet } from "react-native";
+import { ImageBackground, View, StyleSheet } from "react-native";
+import WhiteBox from "./WhiteBox";
 
 export default class Autenticacao extends Component{
     render(): React.ReactNode {
@@ -7,9 +8,7 @@ export default class Autenticacao extends Component{
         return(
             <View style={styles.container}>
                 <ImageBackground  source={bgImg} style={styles.imgBg}>
-                    <View style={styles.cetralSqr}>
-                        <Text>Olá</Text>
-                    </View>
+                    <WhiteBox/>
                 </ImageBackground>
             </View>
         )
@@ -26,18 +25,5 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent:'center',
         alignItems:'center'
-    },
-    cetralSqr:{
-        backgroundColor:'white',
-        width:'70%',
-        height:'40%',
-        alignItems:'center',
-        justifyContent:'center',
-        borderRadius:15,
-        shadowRadius:20,
-        shadowColor:'#000',
-        shadowOpacity:1,
-        alignSelf:'center',
-        shadowOffset: { width: 20, height: 20, }
     }
 })
