@@ -11,23 +11,24 @@ const Stack = createNativeStackNavigator()
 export default ()=>{
     return(
         <NavigationContainer>
-            <Stack.Navigator screenOptions={{headerShown: false}}>
-                <Stack.Screen
+            <Stack.Navigator>
+                <Stack.Screen options={{headerShown:false}}
                     name="CreateUser"
                     component={CreateUser}
                 />
-                <Stack.Screen
+                <Stack.Screen options={{headerTransparent:true, title:''}}
                     name="CadastroDono"
                     component={CadastroDono}
                 />
-                <Stack.Screen
+                <Stack.Screen options={{headerTransparent:true, title:''}}
                     name="CadastroPrestador"
                     component={CadastroPrestador}
                 />
-                <Stack.Screen
+                <Stack.Screen options={{headerTransparent:true, title:''}}
                     name="Login"
                     component={Login}
                 />
+                
             </Stack.Navigator>
         </NavigationContainer>
     )
