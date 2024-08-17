@@ -1,10 +1,10 @@
 import React from "react";
 import Autenticacao from "./components/BackGround";
-import Index from "./routes/Index";
+import Routes from "./routes/Routes";
 
 
 export default (props:any)=>{
 	return(
-		<Index/>
+		<Routes/>
 	)
 }

@@ -1,9 +1,18 @@
 import React from "react";
-import { Text } from "react-native";
+import { Button } from "react-native";
+import BackGround from "../components/BackGround"
+import WhiteBox from "../components/WhiteBox";
 
 
-export default (props:any)=>{
+export default function CreateUser({navigation}:any){
 	return(
-		<Text>Página 2</Text>
+		<BackGround>
+			<WhiteBox>
+				<Button
+					title="proxima pagina"
+					onPress={()=>navigation.navigate('Pagina')}			
+				/>
+			</WhiteBox>
+		</BackGround>
 	)
 }
