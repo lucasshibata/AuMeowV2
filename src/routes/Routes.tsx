@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator()
 export default ()=>{
     return(
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator screenOptions={{headerShown: false}}>
                 <Stack.Screen
                     name="CreateUser"
                     component={CreateUser}

@@ -1,37 +1,38 @@
 import React from "react";
-import { Button, Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import BackGround from "../components/BackGround"
 import WhiteBox from "../components/WhiteBox";
+import BtnComp from "../components/BtnComp";
+import RenderLogo from "../components/RenderLogo";
 
 
 export default function CreateUser({navigation}:any){
 	return(
 		<BackGround>
+			<RenderLogo/>
+			<View style={{height:10}}/>
 			<WhiteBox>
 				<Text style={styles.title}>Bem-vindo ao AuMeow!</Text>
-				<Text style={styles.txt}>Escolha uma opção para se cadastrar</Text>
+				<View style={{height:10}}/>
+				<Text style={styles.txt}>Escolha uma opção para se cadastrar:</Text>
+				<View style={{height:5}}/>
 				<View style={{flexDirection:'row', gap:10}}>
-					<View style={{borderRadius:15}}>
-						<Button
-							title="Dono de Pet"
-							onPress={()=>navigation.navigate('CadastroDono')}
-							color={"#7360DF"}
-						/>
-					</View>
-					
-					<Button
-						title="Prestador de Serviços"
-						onPress={()=>navigation.navigate('CadastroPrestador')}	
-						color={"#7360DF"}
-
+					<BtnComp
+						labelButton="Dono de Pet"
+						onpress={()=>navigation.navigate('CadastroDono')}
+					/>
+					<BtnComp
+						labelButton="Prestador de Serviços"
+						onpress={()=>navigation.navigate('CadastroPrestador')}	
 					/>
 				</View>
-				<Text style={styles.txt}>Caso já tenha uma conta, clique aqui</Text>
-				<View style={{justifyContent:'flex-start', backgroundColor: 'black'}}>
-					<Button
-						title="Entrar"
-						onPress={()=>navigation.navigate('Login')}
-						color={"#7360DF"}	
+				<View style={{height:10}}/>
+				<Text style={styles.txt}>Caso já tenha uma conta, clique aqui:</Text>
+				<View style={{height:5}}/>
+				<View style={{flexDirection:'row'}}>
+					<BtnComp
+						labelButton="Entrar"
+						onpress={()=>navigation.navigate('Login')}	
 					/>
 				</View>
 			</WhiteBox>
@@ -41,14 +42,11 @@ export default function CreateUser({navigation}:any){
 
 const styles = StyleSheet.create({
 	title:{
-		fontSize:20,
+		fontSize:28,
 		color:'#7360DF'
 	},
 	txt:{
-		fontSize:15,
+		fontSize:16,
 		color:'#7360DF'
-	},
-	btns:{
-		width:50
 	}
 })
