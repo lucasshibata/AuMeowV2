@@ -5,6 +5,7 @@ import CreateUser from "../screens/CreateUser";
 import CadastroDono from "../screens/CadastroDono";
 import CadastroPrestador from "../screens/CadastroPrestador";
 import Login from "../screens/Login";
+import RecoverPassword from "../screens/RecoverPassword";
 
 const Stack = createNativeStackNavigator()
 
@@ -27,6 +28,10 @@ export default ()=>{
                 <Stack.Screen options={{headerTransparent:true, title:''}}
                     name="Login"
                     component={Login}
+                />
+                <Stack.Screen options={{headerTransparent:true, title:''}}
+                    name="RecoverPassword"
+                    component={RecoverPassword}
                 />
                 
             </Stack.Navigator>

@@ -1,9 +1,9 @@
-import React from "react";
-import { Text, View, StyleSheet } from "react-native";
-import BackGround from "../components/BackGround"
-import WhiteBox from "../components/WhiteBox";
-import BtnComp from "../components/BtnComp";
-import RenderLogo from "../components/RenderLogo";
+import React from 'react';
+import { Text, View, StyleSheet } from 'react-native';
+import BackGround from '../components/BackGround';
+import WhiteBox from '../components/WhiteBox';
+import BtnComp from '../components/BtnComp';
+import RenderLogo from '../components/RenderLogo';
 
 
 export default function CreateUser({navigation}:any){
@@ -32,12 +32,12 @@ export default function CreateUser({navigation}:any){
 				<View style={{flexDirection:'row'}}>
 					<BtnComp
 						labelButton="Entrar"
-						onpress={()=>navigation.navigate('Login')}	
+						onpress={()=>navigation.navigate('Login')}
 					/>
 				</View>
 			</WhiteBox>
 		</BackGround>
-	)
+	);
 }
 
 const styles = StyleSheet.create({

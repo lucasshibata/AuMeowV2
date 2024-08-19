@@ -1,9 +1,9 @@
-import React from "react";
-import Routes from "./routes/Routes";
+import React from 'react';
+import Routes from './routes/Routes';
 
 
-export default (props:any)=>{
+export default ()=>{
 	return(
 		<Routes/>
-	)
-}
+	);
+};
