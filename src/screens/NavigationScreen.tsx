@@ -5,7 +5,7 @@ import BackGround from "../components/BackGround";
 export default ()=>{
     return(
         <BackGround>
-            <Text>Esqueci minha senha</Text>
+            <Text>Navigation Screen</Text>
         </BackGround>
     )
 }

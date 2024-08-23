@@ -2,9 +2,13 @@ import React from "react";
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
 
 
-export default ({labelButton, onpress}:any)=>{
+export default (props:any)=>{
+    const {labelButton, toPress, bgColor} = props
     return(
-        <TouchableOpacity style={styles.btn_st} onPress={onpress} >
+        <TouchableOpacity 
+            style={[styles.btn_st, {backgroundColor:bgColor||'#7360DF'}]} 
+            onPress={toPress}
+        >
             <Text style={styles.btn_txt}>{labelButton}</Text>
         </TouchableOpacity>
     )
@@ -12,7 +16,7 @@ export default ({labelButton, onpress}:any)=>{
 
 const styles = StyleSheet.create({
     btn_st:{
-		backgroundColor:'#7360DF',
+		
         alignItems:'center',
         justifyContent:'center',
         padding:10,

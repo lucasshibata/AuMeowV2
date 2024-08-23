@@ -1,11 +1,12 @@
 import React from "react";
-import { Text } from "react-native";
 import BackGround from "../components/BackGround";
+import { Text } from "react-native";
+
 
 export default ()=>{
     return(
         <BackGround>
-            <Text>Esqueci minha senha</Text>
+            <Text>OAuth2</Text>
         </BackGround>
     )
 }
