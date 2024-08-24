@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     box:{
         height:250, 
         width:155, 
-        backgroundColor:'black', 
+        backgroundColor:'#7360DF', 
         borderRadius:15, 
         margin:10
     },

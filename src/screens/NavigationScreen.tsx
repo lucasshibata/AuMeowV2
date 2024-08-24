@@ -8,7 +8,7 @@ import Space from "../components/Space";
 export default (props:any)=>{
     const {navigation} = props
     const data = [
-        { titleNav: 'Serviços Pet', srcImg:require('../../assets/dog-walk.png'), navScreen:()=>navigation.navigate('PetServices') },
+        { titleNav: 'Serviços Pet', srcImg:require('../../assets/dog-walk.jpg'), navScreen:()=>navigation.navigate('PetServices') },
         { titleNav: 'Loja', srcImg:require('../../assets/shop-img.png'), navScreen:()=>navigation.navigate('Shopping') },
     ];
 

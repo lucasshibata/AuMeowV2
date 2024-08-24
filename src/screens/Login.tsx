@@ -7,18 +7,19 @@ import BtnComp from "../components/BtnComp";
 import OAuth2 from "../components/OAuth2";
 import Space from "../components/Space";
 import RenderLogo from "../components/RenderLogo";
+import TitleBusiness from "../components/TitleBusiness";
 
 
 export default function Login(props:any){
 	const {navigation} = props
 	const [email, onChangeEmail] = useState('')
 	const [password, onChangePass] = useState('')
-	const [check1, setCheck1] = useState(false);
+	const [check1, setCheck1] = useState(false)
 	
 	return(
 		<BackGround>
 			<RenderLogo/>
-			<Text style={styles.nameEnterprise}>AuMeow</Text>
+			<TitleBusiness/>
 			<Space h={10}/>
 			<WhiteBox>
 				<Text style={styles.title}>Entrar</Text>
@@ -65,10 +66,6 @@ export default function Login(props:any){
 }
 
 const styles = StyleSheet.create({
-	nameEnterprise:{
-		fontSize:32,
-		color:'white'
-	},
 	title:{
 		fontSize:28,
 		color:'#7360DF'
