@@ -8,6 +8,8 @@ import Login from "../screens/Login";
 import RecoverPassword from "../screens/RecoverPassword";
 import OAuth2Screen from "../screens/OAuth2Screen";
 import NavigationScreen from "../screens/NavigationScreen";
+import Shopping from "../screens/Shopping";
+import PetServices from "../screens/PetServices";
 
 const Stack = createNativeStackNavigator()
 
@@ -42,6 +44,14 @@ export default ()=>{
                 <Stack.Screen options={{headerTransparent:true, title:''}}
                     name="NavigationScreen"
                     component={NavigationScreen}
+                />
+                <Stack.Screen options={{headerTransparent:true, title:''}}
+                    name="Shopping"
+                    component={Shopping}
+                />
+                <Stack.Screen options={{headerTransparent:true, title:''}}
+                    name="PetServices"
+                    component={PetServices}
                 />
             </Stack.Navigator>
         </NavigationContainer>
