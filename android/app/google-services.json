@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "670657591122",
+    "project_id": "aumeowv2",
+    "storage_bucket": "aumeowv2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670657591122:android:121510e627243193ff2c8b",
+        "android_client_info": {
+          "package_name": "com.aumeowv2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXuKV6dJbb_aYF37sqlMSRabGQjbbkofY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

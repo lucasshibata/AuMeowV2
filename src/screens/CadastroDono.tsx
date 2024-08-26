@@ -7,20 +7,24 @@ import TitleBusiness from "../components/TitleBusiness";
 import Space from "../components/Space";
 import { useForm, Controller} from "react-hook-form"
 import BtnComp from "../components/BtnComp";
+import Auth from '@react-native-firebase/auth'
 
 
 export default function CadastroDono(props:any){
 	const {navigation} = props
 	const { control, handleSubmit, formState:{errors}} = useForm({})
 
-	// const [name, onChangeName] = useState('')
-	// const [surname, onChangeSurname] = useState('')
-	// const [email, onChangeEmail] = useState('')
-	// const [password, onChangePassword] = useState('')
-	// const [confirmPass, onChangeConfirmPass] = useState('')
-
 	function handleSign(data:any){
-		console.log(data)
+		Auth().createUserWithEmailAndPassword(data.userEmail, data.userPassword)
+		.then(userCrendential =>{console.log('user: ', userCrendential)})
+		.catch(error=>{
+			if(error.code === 'auth/email-already-in-use'){
+				console.log('email já existe')
+			}
+			if(error.code === 'auth/invalid-email'){
+				console.log('email inválido')
+			}
+		})
 	}
 	return(
 		<BackGround>
