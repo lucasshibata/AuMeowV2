@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Text, StyleSheet, TextInput, View, TouchableOpacity } from "react-native";
+import { Text, StyleSheet, TextInput, View, TouchableOpacity, Alert } from "react-native";
 import BackGround from "../components/BackGround";
 import WhiteBox from "../components/WhiteBox";
 import { CheckBox } from 'react-native-elements';
@@ -8,14 +8,31 @@ import OAuth2 from "../components/OAuth2";
 import Space from "../components/Space";
 import RenderLogo from "../components/RenderLogo";
 import TitleBusiness from "../components/TitleBusiness";
+import { useForm, Controller} from "react-hook-form"
+import Auth from '@react-native-firebase/auth'
 
 
 export default function Login(props:any){
 	const {navigation} = props
-	const [email, onChangeEmail] = useState('')
-	const [password, onChangePass] = useState('')
+	const {control, handleSubmit, formState:{errors}} = useForm({})
 	const [check1, setCheck1] = useState(false)
 	
+	function signIn(data:any){
+		Auth().signInWithEmailAndPassword(data.loginEmail, data.loginPassword).then(()=>{
+			console.log('login com sucesso')
+			navigation.navigate('NavigationScreen')
+		})
+		.catch(error=>{
+			if(error.code === 'auth/email-already-in-use'){
+				console.log('email já existe')
+				Alert.alert("email já existe")
+			}
+			if(error.code === 'auth/invalid-email'){
+				console.log('email inválido')
+				Alert.alert("email inválido")
+			}
+		})
+	}
 	return(
 		<BackGround>
 			<RenderLogo/>
@@ -23,17 +40,31 @@ export default function Login(props:any){
 			<Space h={10}/>
 			<WhiteBox>
 				<Text style={styles.title}>Entrar</Text>
-				<TextInput 
-					placeholder="Email" 
-					style={styles.txtInput} 
-					onChangeText={email => onChangeEmail(email)}
+				<Controller
+					control={control}
+					name="loginEmail"
+					render={({field:{onChange, value}})=>(
+						<TextInput 
+							placeholder="Email" 
+							style={styles.txtInput} 
+							onChangeText={onChange}
+							value={value}
+						/>
+					)}
 				/>
 				<Space h={10}/>
-				<TextInput 
-					placeholder="Senha"  
-					style={styles.txtInput} 
-					secureTextEntry={true} 
-					onChangeText={password => onChangePass(password)}
+				<Controller
+					control={control}
+					name="loginPassword"
+					render={({field:{onChange, value}})=>(
+						<TextInput 
+							placeholder="Senha" 
+							style={styles.txtInput} 
+							onChangeText={onChange}
+							value={value}
+							secureTextEntry={true} 
+						/>
+					)}
 				/>
 				<Space h={10}/>
 				<View style={{flexDirection:'row', alignItems:'center'}}>
@@ -54,7 +85,7 @@ export default function Login(props:any){
 				<Space h={10}/>
 				<View style={{flexDirection:'row', justifyContent:'space-around'}}>
 					<BtnComp labelButton="Cadastrar" toPress={()=>navigation.navigate('CreateUser')}/>
-					<BtnComp labelButton="Entrar" toPress={()=>navigation.navigate('NavigationScreen')}/>
+					<BtnComp labelButton="Entrar" toPress={handleSubmit(signIn)}/>
 				</View>
 				<View style={{height:10}}/>
 				<Text style={styles.txt}>Ou entre com outra conta:</Text>

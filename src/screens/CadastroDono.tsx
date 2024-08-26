@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Text, View, StyleSheet, TextInput } from "react-native";
+import React from "react";
+import { Text, View, StyleSheet, TextInput, Alert } from "react-native";
 import BackGround from "../components/BackGround";
 import WhiteBox from "../components/WhiteBox";
 import RenderLogo from "../components/RenderLogo";
@@ -20,8 +20,10 @@ export default function CadastroDono(props:any){
 		.catch(error=>{
 			if(error.code === 'auth/email-already-in-use'){
 				console.log('email já existe')
+				Alert.alert("email já existe")
 			}
 			if(error.code === 'auth/invalid-email'){
+				Alert.alert("email inválido")
 				console.log('email inválido')
 			}
 		})
