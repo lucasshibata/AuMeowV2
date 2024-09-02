@@ -8,6 +8,7 @@ import Space from "../components/Space";
 import { useForm, Controller} from "react-hook-form"
 import BtnComp from "../components/BtnComp";
 import Auth from '@react-native-firebase/auth'
+import Database from '@react-native-firebase/database'
 
 
 export default function CadastroDono(props:any){
@@ -16,7 +17,15 @@ export default function CadastroDono(props:any){
 
 	function handleSign(data:any){
 		Auth().createUserWithEmailAndPassword(data.userEmail, data.userPassword)
-		.then(userCrendential =>{console.log('user: ', userCrendential)})
+		.then(userCrendential =>{
+			console.log('user: ', userCrendential);
+			const userRef = Database().ref('users').push();
+			userRef.set({
+			  ...data,
+			  uid: userRef.key, // Adiciona o UID gerado pelo Firebase
+			});
+			navigation.navigate('Login');
+		})
 		.catch(error=>{
 			if(error.code === 'auth/email-already-in-use'){
 				console.log('email já existe')

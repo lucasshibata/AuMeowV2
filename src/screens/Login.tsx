@@ -23,9 +23,9 @@ export default function Login(props:any){
 			navigation.navigate('NavigationScreen')
 		})
 		.catch(error=>{
-			if(error.code === 'auth/email-already-in-use'){
-				console.log('email já existe')
-				Alert.alert("email já existe")
+			if(error.code === 'auth/user-not-found'){
+				console.log('Não há registro de usuário existente')
+				Alert.alert("Não há registro de usuário existente")
 			}
 			if(error.code === 'auth/invalid-email'){
 				console.log('email inválido')
