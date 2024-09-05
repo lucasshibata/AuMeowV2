@@ -1,8 +1,16 @@
-import { View } from "react-native"
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
 
 export default (props:any)=>{
-    const {h, w} = props
+    const {h, w} = props;
+    const styles = StyleSheet.create({
+        spaceStyle:{
+            height:h || 0,
+            width:w || 0,
+        },
+    });
+
     return(
-        <View style={{height:h||0, width:w||0, backgroundColor:'black'}}/>
-    )
-}
+        <View style={styles.spaceStyle}/>
+    );
+};

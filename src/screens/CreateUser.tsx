@@ -17,14 +17,14 @@ export default function CreateUser({navigation}:any){
 				<Space h={10}/>
 				<Text style={styles.txt}>Escolha uma opção para se cadastrar:</Text>
 				<Space h={10}/>
-				<View style={{flexDirection:'row', gap:10}}>
+				<View style={styles.containerBtns}>
 					<BtnComp
 						labelButton="Dono de Pet"
 						toPress={()=>navigation.navigate('CadastroDono')}
 					/>
 					<BtnComp
 						labelButton="Prestador de Serviços"
-						toPress={()=>navigation.navigate('CadastroPrestador')}	
+						toPress={()=>navigation.navigate('CadastroPrestador')}
 					/>
 				</View>
 			</WhiteBox>
@@ -35,10 +35,14 @@ export default function CreateUser({navigation}:any){
 const styles = StyleSheet.create({
 	title:{
 		fontSize:30,
-		color:'#7360DF'
+		color:'#7360DF',
 	},
 	txt:{
 		fontSize:18,
-		color:'#7360DF'
-	}
-})
+		color:'#7360DF',
+	},
+	containerBtns:{
+		flexDirection:'row',
+		gap:10,
+	},
+});

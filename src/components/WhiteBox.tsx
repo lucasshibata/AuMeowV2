@@ -1,13 +1,13 @@
-import React from "react"
-import { View, StyleSheet } from "react-native"
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
 
 export default (props:any)=>{
     return(
         <View style={styles.centralSqr}>
             {props.children}
         </View>
-    )
-}
+    );
+};
 
 const styles = StyleSheet.create({
     centralSqr:{
@@ -16,6 +16,6 @@ const styles = StyleSheet.create({
         height:'auto',
         justifyContent:'center',
         borderRadius:20,
-        padding:20
-    }
-})
+        padding:20,
+    },
+});
