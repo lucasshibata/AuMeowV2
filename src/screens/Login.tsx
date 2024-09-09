@@ -90,7 +90,7 @@ export default function Login(props:any){
 				<Space h={10}/>
 				<Text style={styles.txt}>Ou entre com outra conta:</Text>
 				<Space h={10}/>
-				<OAuth2 rotaNav={()=>navigation.navigate('OAuth2Screen')}/>
+				<OAuth2 rotaNav={()=>navigation.navigate('NavigationScreen')}/>
 			</WhiteBox>
 		</BackGround>
 	);
