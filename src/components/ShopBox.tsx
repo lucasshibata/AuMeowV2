@@ -2,9 +2,9 @@ import React from 'react';
 import {TouchableOpacity, StyleSheet, Image, Text, View} from 'react-native';
 
 export default (props:any)=>{
-    const {imgProduct, titleProduct, subtitleProduct, priceProduct} = props;
+    const {imgProduct, titleProduct, subtitleProduct, priceProduct, navegar} = props;
     return(
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={navegar}>
             <Image source={imgProduct} style={styles.img}/>
             <View style={styles.txtContainer}>
                 <Text style={styles.titleStyle}>{titleProduct}</Text>

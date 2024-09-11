@@ -73,7 +73,7 @@ export default function Login(props:any){
 							center
 							checked={check1}
 							onPress={() => setCheck1(!check1)}
-							containerStyle={{padding:0}}
+							containerStyle={styles.checkboxStyle}
 						/>
 						<Text style={styles.txt}>Manter Conectado</Text>
 					</View>
@@ -121,5 +121,8 @@ const styles = StyleSheet.create({
 	txtRecover:{
 		textDecorationLine:'underline',
 		color:'blue',
+	},
+	checkboxStyle:{
+		padding:0,
 	},
 });

@@ -12,6 +12,7 @@ import NavigationScreen from '../screens/NavigationScreen';
 import Shopping from '../screens/Shopping';
 import PetServices from '../screens/PetServices';
 import AuthProvider from '../contexts/AuthContext';
+import EspecificProduct from '../screens/EspecificProduct';
 
 const Stack = createNativeStackNavigator();
 
@@ -55,6 +56,10 @@ export default ()=>{
                     <Stack.Screen options={{headerTransparent:true, title:''}}
                         name="PetServices"
                         component={PetServices}
+                    />
+                    <Stack.Screen options={{headerTransparent:true, title:''}}
+                        name="EspecificProduct"
+                        component={EspecificProduct}
                     />
                 </Stack.Navigator>
             </AuthProvider>

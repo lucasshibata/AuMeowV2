@@ -3,7 +3,8 @@ import { FlatList, Text, View, StyleSheet } from 'react-native';
 import ShopBox from '../components/ShopBox';
 
 
-export default ()=>{
+export default (props:any)=>{
+    const {navigation} = props;
     const data = [
         {srcImg:require('../../assets/Teste_img_racao.jpg'), nomeP:'nome do produto',lojaP:'nome da loja', preco:18.90},
         {srcImg:require('../../assets/Teste_img_racao.jpg'), nomeP:'nome do produto2',lojaP:'nome da loja2', preco:54.90},
@@ -20,7 +21,7 @@ export default ()=>{
     ];
 
     function renderItem({item}:any){
-        return <ShopBox imgProduct={item.srcImg} titleProduct={item.nomeP} subtitleProduct={item.lojaP} priceProduct={item.preco}/>;
+        return <ShopBox imgProduct={item.srcImg} titleProduct={item.nomeP} subtitleProduct={item.lojaP} priceProduct={item.preco} navegar={()=>navigation.navigate('EspecificProduct')}/>;
     }
     return(
         <View style={styles.container}>
@@ -41,6 +42,6 @@ const styles = StyleSheet.create({
         alignItems:'center',
     },
     listItens:{
-        height:'70%',
-    }
+        height:'100%',
+    },
 });

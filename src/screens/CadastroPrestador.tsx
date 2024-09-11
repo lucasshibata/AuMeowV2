@@ -1,7 +1,8 @@
 import React from 'react';
-import { Text, Button } from 'react-native';
+import { Text } from 'react-native';
 import BackGround from '../components/BackGround';
 import WhiteBox from '../components/WhiteBox';
+import BtnComp from '../components/BtnComp';
 
 
 export default function CadastroPrestador(props:any){
@@ -10,7 +11,7 @@ export default function CadastroPrestador(props:any){
 		<BackGround>
 			<WhiteBox>
 				<Text>Cadastro Prestador</Text>
-				<Button title="home" onPress={navigation.navigate('Login')}/>
+				<BtnComp labelButton="voltar menu" toPress={()=>navigation.navigate('Login')}/>
 			</WhiteBox>
 		</BackGround>
 	);
