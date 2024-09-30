@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "670657591122",
-    "project_id": "aumeowv2",
-    "storage_bucket": "aumeowv2.appspot.com"
+    "project_number": "599398817370",
+    "project_id": "aumeowv2-56651",
+    "storage_bucket": "aumeowv2-56651.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:670657591122:android:121510e627243193ff2c8b",
+        "mobilesdk_app_id": "1:599398817370:android:3febaca84f118dd8074263",
         "android_client_info": {
           "package_name": "com.aumeowv2"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBXuKV6dJbb_aYF37sqlMSRabGQjbbkofY"
+          "current_key": "AIzaSyCmmrnWQ1NKuE8whlWZ0xWtbK43Qh_f4JQ"
         }
       ],
       "services": {
